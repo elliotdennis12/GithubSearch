@@ -18,7 +18,7 @@ export class SearchComponent {
     p: number = 1;
     searchStarted: boolean = false;
 
-    private sortOptions: Array<{ name: string, value: string }> = [
+    sortOptions: Array<{ name: string, value: string }> = [
         { name: "Best Match", value: "" },
         { name: "Followers: Most", value: "&sort=followers&order=desc" },
         { name: "Followers: Least", value: "&sort=followers&order=asc" },
