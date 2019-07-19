@@ -1,0 +1,51 @@
+<div class="row mt-5">
+    <!-- <h1>Welcome to my github search demo!</h1> -->
+    <div class="col-md-9">
+        <form (ngSubmit)="search(1)">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" [(ngModel)]="searchText" name="searchText" placeholder="Search criteria" aria-label="">
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-outline-secondary">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-3">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="sort">Sort:</label>
+            </div>
+            <select id="sort" class="form-control" [(ngModel)]="sortSelected" (change)="search(1)">Sort:
+                <option *ngFor="let sort of sortOptions" [value]="sort.value">{{sort.name}}</option>
+            </select>
+        </div>
+    </div>
+    <div *ngIf="searchStarted" class="col-lg-12">
+        <h4>{{count}} users <span *ngIf="count > 1000">(results are limited to 1000)</span></h4>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead class="thread-dark">
+                    <th></th>
+                    <th>Name</th>
+                    <th>Bio</th>
+                    <th>Company</th>
+                    <th>Followers</th>
+                    <th>Repos</th>
+                    <th>Joined</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users | paginate: { itemsPerPage: 10, maxSize: 9, currentPage: p, totalItems: pages }">
+                        <td><img src={{user.avatar_url}}/></td>
+                        <td><a href="{{user.html_url}}" target="_blank">{{user.login}}</a></td>
+                        <td>{{user.bio}}</td>
+                        <td>{{user.company}}</td>
+                        <td>{{user.followers}}</td>
+                        <td>{{user.public_repos}}</td>
+                        <td>{{user.created_at | date}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <pagination-controls (pageChange)="getPage($event)"></pagination-controls>
+        </div>
+    </div>
+</div>
