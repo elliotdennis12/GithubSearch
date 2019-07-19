@@ -5,10 +5,14 @@
         "ng": "ng",
         "start": "ng serve",
         "build": "ng build",
-        "heroku-postbuild": "ng build --prod",
+        "heroku-postbuild": "ng build --aot --prod",
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e"
+    },
+    "engines": {
+        "node": "~8.11.3",
+        "npm": "~6.9.0"
     },
     "private": true,
     "dependencies": {
@@ -19,7 +23,6 @@
         "@angular/forms": "^8.1.2",
         "@angular/platform-browser": "^8.1.2",
         "@angular/platform-browser-dynamic": "^8.1.2",
-        "@angular-devkit/build-angular": "^0.801.2",
         "@angular/router": "^8.1.2",
         "@angular/cli": "^8.1.2",
         "bootstrap": "^4.3.1",
