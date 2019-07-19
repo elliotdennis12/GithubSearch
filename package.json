@@ -25,6 +25,7 @@
         "@angular/platform-browser-dynamic": "^8.1.2",
         "@angular/router": "^8.1.2",
         "@angular/cli": "^8.1.2",
+        "@angular/compiler-cli": "^8.1.2",
         "bootstrap": "^4.3.1",
         "core-js": "^2.5.4",
         "jquery": "^3.4.1",
@@ -37,7 +38,6 @@
     "devDependencies": {
         "@angular-devkit/build-angular": "^0.801.2",
         "@angular/cli": "^8.1.2",
-        "@angular/compiler-cli": "^8.1.2",
         "@angular/language-service": "^8.1.2",
         "@types/jasmine": "~2.8.8",
         "@types/jasminewd2": "~2.0.3",
